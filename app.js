@@ -41,7 +41,5 @@ io.sockets.on('connection', function(socket){
   })
 })
 
-server.listen(8080, "13.48.123.92", function() {
-    console.log('server is activated..')
-})
+server.listen(8080, "13.48.123.92")
 
