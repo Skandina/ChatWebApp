@@ -1,9 +1,12 @@
 const fs = require('fs')
 const express = require('express')
 const socket = require('socket.io')
+
+const hostname ='13.48.123.92'
+const port = 5000
 const http = require('http')
 const app = express()
-const server = http.createServer(app)
+const server = http.createServer(app).listen(port)
 const io = socket(server)
 
 app.use('/css', express.static('./static/css'))
@@ -41,7 +44,8 @@ io.sockets.on('connection', function(socket){
   })
 })
 
-server.listen(5000, '13.48.123.92', function(){
+/*
+server.listen(5000, function(){
     console.log('server is activated..')
 })
-
+*/
