@@ -46,5 +46,5 @@ function send() {
     chat.appendChild(msg)
   
 
-    socket.emit(socket.name, ':', 'message', {type: 'message', message: message})
+    socket.emit('message', {type: 'message', message: message})
 }
