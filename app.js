@@ -35,7 +35,7 @@ io.sockets.on('connection', function(socket){
   socket.on('message', function(data){
     data.name = socket.name
     //console.log(data)
-    io.sockets.emit('update', data);
+    io.sockets.emit(data);
   })
   
   socket.on('disconnect', function() {
