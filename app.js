@@ -35,17 +35,13 @@ io.sockets.on('connection', function(socket){
   socket.on('message', function(data){
     data.name = socket.name
     console.log(data)
-    socket.broadcast.emit('update', data);
+    socket.broadcast.emit('update', socket.name + data)
   })
   
   socket.on('disconnect', function() {
-    console.log(socket.name + 'logged out')
+    console.log(socket.name + ' logged out')
     socket.broadcast.emit('update', {type: 'disconnect', name:'SERVER', message: socket.name + '  logged out'});
   })
 })
 
-/*
-server.listen(5000, function(){
-    console.log('server is activated..')
-})
-*/
+
